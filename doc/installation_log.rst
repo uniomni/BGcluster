@@ -70,65 +70,53 @@ tambora (local IP address): 10.1.1.2
 nodes : 10.1.1.11 - 20
 #we use node1 (10.1.1.11) for instance
 
-#Setting up tambora (head node):
---------------------------------
-#ssh to tambora
-#set as root
-	sudo -s
-#Installing nfs program
-	apt-get install nfs-kernel-server portmap
-#we wanted to share two directories: /home and /var/nfs.
-#Because the /var/nfs/ does not exist, we need created itself
-	mkdir /var/nfs/
+Setting up tambora (head node):
+-------------------------------
+ * ssh to tambora
+ * Change to root::
+     sudo -s
 
-#we should change the ownership of the directory to the user, nobody and the group, no group. 
-#These represent the default user through which clients can access a directory shared through NFS. 
-	chown nobody:nogroup /var/nfs
-#export the directorie
-	nano /etc/exports
-#sharing both directories with the node
-/home           10.1.1.11(rw,sync,no_root_squash,no_subtree_check)
-/var/nfs        10.1.1.11(rw,sync,no_subtree_check)
-#command to export both directories
-exportfs -a
+ * Install nfs packages::
+     apt-get install nfs-kernel-server portmap
 
-#Setting up node
-----------------
-#ssh to node from head node (ssh install@10.1.1.11)
+ * Make /home available for mounting by editing /etc/exports::
+     /home 10.1.1.11(rw,sync,no_root_squash,no_subtree_check)
 
-#Install the nfs programs
-apt-get install nfs-common portmap
+ * Export all::
+     exportfs -a
 
-#create the directories that will contain the NFS shared files
-mkdir -p /mnt/nfs/home
-mkdir -p /mnt/nfs/var/nfs
+Setting up node
+---------------
+ * ssh to node from head node (ssh install@10.1.1.11)
 
-#mount directories from head node
-mount 10.1.1.2:/home /mnt/nfs/home
-mount 10.1.1.2:/var/nfs /mnt/nfs/var/nfs
+ * Install the nfs programs::
+    apt-get install nfs-common portmap
 
-#list the directories
-df -h
+ * Create the directories that will contain the NFS shared files::
+    mkdir -p /mnt/nfs/home
 
-#mount command to see the entire list of mounted file systems.
-mount
+ * Add to /etc/fstab::
+    10.1.1.2:/home /mnt/nfs/home nfs defaults 1 1
 
-#moving /home on node to another directory (e.g /home_old)
-rm /home /home_old
+ * list the mounted filesystems::
+    df -h
 
-#create symlinks from nfs directory to the node new /home
-ln -s /mnt/nfs/home /home
+ * Change to root::
+     sudo -s
 
-#Testing the NFS mount
-----------------------
-# on the node /home, create new file to test nfs 
-nano abc.txt
+ * Move /home on node to another directory (e.g /home_old)::
+    mv /home /home_old
 
-#if nfs mount successfully setted up, abc.txt should be apper on head node /home
+ * Create symlinks from nfs directory to the node new /home::
+    ln -s /mnt/nfs/home /home
 
---
+Testing the NFS mount
+---------------------
+ * on the node /home, create new file to test nfs
+    touch abc.txt
 
-/etc/exports stuff
+ * if nfs mount successfully set up, abc.txt should be appear on head node /home
+
 
 Installing and configuring compute nodes
 ========================================
