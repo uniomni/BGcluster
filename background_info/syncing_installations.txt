@@ -4,7 +4,7 @@ Creating a local distribution based on cached debian packages
 (a partial debian mirror). This is an example on how it worked on my machine.
 Replace actual names with those on yours.
 
-  1: Install apt-move
+  1: Install apt-move (use version 4.2.27-3, see: packages.debian.org/sid/i386/apt-move/download )
   
   2: Edit /etc/aptmove.conf, in particular:
        
