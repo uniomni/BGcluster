@@ -2,12 +2,19 @@
 BG Cluster Installation log
 ===========================
 
+This document outlines the technical steps taken to build the Ubuntu 12.04 Beowulf cluster at Badan Geologi in July 2013. Although derived from this particular installation, most of the information is generic and could be useful for other clusters.
+
+The cluster consists of one headnode and 10 compute nodes with a 3 common NAS units. As the compute nodes boot from local disks the initial steps are necessarily manual. However, beyond the basic installation configuration management is scripted where possible.
+
+The source code and technical documentation for this project are available at https://bitbucket.org/ismailsunni/bgcluster
+
+
 Installing and configuring head node
 ====================================
 
 
-Install of Ubuntu 12.04 (64 bit).
----------------------------------
+Install of Ubuntu 12.04 (64 bit)
+--------------------------------
 
 :hostname: tambora
 :username: install
@@ -48,8 +55,8 @@ Network configuration of headnode
 
  * sudo /etc/init.d/networking restart
 
-Install fundamental packages.
------------------------------
+Install fundamental packages
+----------------------------
 
 * apt-get update
 * apt-get install openssh-server
@@ -97,8 +104,8 @@ Network configuration of compute nodes
 
  * sudo /etc/init.d/networking restart
 
-Install fundamental packages.
------------------------------
+Install fundamental packages
+----------------------------
 
  * apt-get update
  * apt-get install openssh-server
