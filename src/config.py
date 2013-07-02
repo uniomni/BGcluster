@@ -10,6 +10,3 @@ for i in range(1, 11):
     node_names.append(hostname)
     node_info[hostname] = ip_address
 
-print node_names
-for node in node_names:
-    print node, node_info[node]
