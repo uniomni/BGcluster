@@ -168,6 +168,7 @@ Setting up NFS mount of /home on nodes
     mv /home /home_old
 
  * Create symlinks from nfs directory to the node new /home::
+
     ln -s /mnt/nfs/home /home
 
 Testing the NFS mount
