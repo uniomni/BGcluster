@@ -171,7 +171,23 @@ TBA
 
 Mounting of NAS
 ---------------
-TBA
+# 3 NAS ( 1 Synology, 2 Buffalo Linkstation)
+# Capacity Synology NAS is 10 Terabyte
+# Capacities of both Buffalo Linkstation NAS are 4 Terabyte for each NAS
+	
+	* Set up first NAS with Synology Assistant
+	* Configure network:: 
+		 IP address 10.1.1.50
+		 Netmask 255.255.255.0
+		 Gateway 10.1.1.1	
+	* Set up user details ::
+		username: admin
+		password: *********
+		NAS name : nas1
+	* Installing DSM 4.2 from Resources CD or Synology Download Center http://www.synology.com/support/download.php?lang=enu&b=5%20bays&m=DS1512%2B
+	* Create volume 1 with all hard drive using RAID 5, so the capacity will reduce from 10 Terabyte to 7.5 Terabyte
+	* Next step Create Shared Folder
+			
 
 Configure entire cluster through scripts
 ----------------------------------------
