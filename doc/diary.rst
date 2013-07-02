@@ -12,6 +12,9 @@
  * NFS mounted /home from node1 to head node and documented process: https://bitbucket.org/ismailsunni/bgcluster/src/27fb7fe5ad74f76cbdf7ea529e8d365e8c33d7e7/doc/installation_log.rst?at=master
  * Started technical documentation (as per link above).
 
+2 July 2013
+-----------
 
+ * Created script to write /etc/hosts file: https://bitbucket.org/ismailsunni/bgcluster/src/c0353be09dc6c872c5f18c7b596b0439742fe012/src/config_server.py?at=master
 
 
