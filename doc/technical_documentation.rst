@@ -63,8 +63,9 @@ Install fundamental packages
 
 * apt-get update
 * apt-get install openssh-server
-* apt-get nfs-kernel-server
-* apt-get nfs-common
+* apt-get install nfs-kernel-server
+* apt-get install nfs-common
+* apt-get install git
 
 
 Make /home available for NFS mount
@@ -192,9 +193,9 @@ Mounting of NAS
 Configure entire cluster through scripts
 ----------------------------------------
 
-# Need section about getting scripts and docs from bitbucket!
+# Getting scripts and docs from bitbucket:
 
  * Run server configuration (e.g. writing /etc/hosts)::
-   sudo python configure_server.py
+   sudo python config_server.py
  * 
 
