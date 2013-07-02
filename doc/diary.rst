@@ -16,15 +16,32 @@
 -----------
 
  * Created script to write /etc/hosts file: https://bitbucket.org/ismailsunni/bgcluster/src/c0353be09dc6c872c5f18c7b596b0439742fe012/src/config_server.py?at=master
- * Verified installation of python-FALL3D, pypar and their dependencies in preparation for installation when tambora is read.
- * Started looking that NAS servers
+ * Investigated puppet but looks like it only really works for .deb packages. In addition it kept causing nodes to hang.
+ * Verified installation of python-FALL3D, pypar, openmpi and their dependencies in preparation for installation when tambora is read.
+ * Installed Synology NAS server.
+ * Made first cut of a remote sudo install script and verified it could install .deb packages and Python setup.py: https://bitbucket.org/ismailsunni/bgcluster/src/791bc6f2f810e0902a0fc2518153cdd7cd1dc8f3/src/exec_remote_sudo.py?at=master
+ * Kept documentation up to date.
+
 
 Set backs
 .........
  * Lost internet access to tambora for more than 2 hours
  * Synology server was not installed and installation disks have gone missing
  * Techical problems with the AusAID system in Jakarta required Rangga to divert his attention away for the cluster (It turned out that all accounts at AIFDR had expired 2nd July).
+ * Buffalo NAS servers do not have NFS server installed (perhaps only designed for Windows?)
 
- 
 
+Next steps
+----------
+
+ * Mount the NAS on head and compute nodes. Update technical docs (Rangga and Cipta).
+ * Build node2, node3, node4 (Cipta)
+ * Update config_server to create mount points generate fstab with mounts on nodes (Rangga)
+ * Continue with LDAP (Rangga - Perkerjaan Rumah)
+ * Start scripting (config_nodes.py) installation of packages on nodes (Ismail and Ole)
+ * Trying to configure MPI and run a parallel program
+ * Network timings (down the track)
+ * Keep docs up to date
+ * Start creating user documentation for users like Anjar (Cipta)
+ * Start creating sysadm docs (e.g. how to install packages and create users).
 
