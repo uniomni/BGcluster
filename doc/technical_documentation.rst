@@ -182,7 +182,7 @@ Mounting of NAS
 		 Gateway 10.1.1.1	
 	* Set up user details ::
 		username: admin
-		password: tambora13
+		password: *********
 		NAS name : nas1
 	* Installing DSM 4.2 from Resources CD or Synology Download Center http://www.synology.com/support/download.php?lang=enu&b=5%20bays&m=DS1512%2B
 	* Create volume 1 with all hard drive using RAID 5, so the capacity will reduce from 10 Terabyte to 7.5 Terabyte
