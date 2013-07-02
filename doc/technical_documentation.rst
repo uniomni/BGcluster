@@ -8,6 +8,9 @@ The cluster consists of one headnode and 10 compute nodes with a 3 common NAS un
 
 The source code and technical documentation for this project are available at https://bitbucket.org/ismailsunni/bgcluster
 
+To login to the cluster as administrator run::
+    ssh install@tambora.vsi.esdm.go.id
+
 
 Installing and configuring head node
 ====================================

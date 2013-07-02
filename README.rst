@@ -1,7 +1,7 @@
 BGcluster
 =========
 
-This the repository for the scripts and documentation relating to the Beowulf cluster at Badan Geologi.
+This the repository for the scripts and documentation relating to the Beowulf cluster at Badan Geologi (tambora.vsi.esdm.go.id).
 
 Contacts
 
