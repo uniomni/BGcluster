@@ -48,7 +48,8 @@ def run_remote(username, host, password, directory=None,
     logfile = '/var/tmp/last_remote_exec_%s.log' % command_sanitized
 
     if verbose:
-        print 'Running command "%s" on %s in directory %s. See logfile %s for details.' % (command, host, cwd, logfile)
+        print 'Running command "%s" on %s in directory %s. See logfile %s for details.' % (command, host, 
+                                                                                           directory, logfile)
     p = subprocess.Popen(['ssh', '-t', '-t', '%s@%s' % (username, host),
                           'cd %s; sudo %s > %s' % (directory, command, logfile)],
                          stdin=subprocess.PIPE, 
