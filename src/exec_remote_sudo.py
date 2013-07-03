@@ -22,18 +22,21 @@ import sys
 import getpass
 import subprocess
 
-logfile = '/var/tmp/last_remote_exec.log'
 
-def run_remote(username, host, password, directory, command):
+def run_remote(username, host, password, directory=None, command='whoami'):
     """Run command on remote host as sudo
 
     Args
     
     username: user id under which to run. Must have sudo access.
     host: hostname or ip address of remote host
-    directory: directory in which to run the command
-    command: unix command to run 
+    directory: directory in which to run the command. If None cd to ~
+    command: unix command to run. Default to 'whoami' (for testing). 
     """
+    logfile = '/var/tmp/last_remote_exec_%s.log' % (command.replace(' ', '_'))
+
+    if directory is None:
+        directory = '~'
 
     p = subprocess.Popen(['ssh', '-t', '-t', '%s@%s' % (username, host),
                           'cd %s; sudo %s > %s' % (directory, command, logfile)],
