@@ -4,6 +4,7 @@ It is assumed that nodes have passwordless ssh established and that
 user has sudo privileges.
 """
 
+import os
 from config import node_names
 
 # First, we check how many nodes can be pinged and and ssh'd into
