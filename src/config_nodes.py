@@ -76,3 +76,26 @@ for command in ['mount -a -v',
         run_remote(username, node, password, directory=None,
                    command=command,
                    verbose=True, debug=False)
+
+# Install python package using setup.py
+# Normally, we do it like this:
+# Go to the directory of setup.py
+# run "python setup.py install"
+
+# Create the common command
+command = 'python setup.py install'
+cur_dir = os.getcwd()
+
+# List directories where setup.py is located.
+# We can put them in the same way as debian pacakges
+for directory in ['~/dev/pypar/']:
+    # Run for each scenario
+    
+    # Run installation for all node
+    for node in node_names:
+        if node in failed:
+            continue
+        run_remote(username, node, password, directory,
+                   command=command,
+                   verbose=True, debug=True) #False)
+
