@@ -14,7 +14,7 @@ from packages import debian_packages
 
 # Here are some code snippets testing that nodes can be pinged and ssh'd into.
 
-failed = node_names[2:]
+failed = node_names[3:]
 print
 for node in node_names:
     if node in failed: continue
@@ -75,7 +75,7 @@ for command in ['mount -a -v',
 
         run_remote(username, node, password, directory=None,
                    command=command,
-                   verbose=True, debug=False)
+                   verbose=True, debug=True)
 
 # Install python package using setup.py
 # Normally, we do it like this:

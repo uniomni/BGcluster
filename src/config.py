@@ -1,8 +1,10 @@
 """Configure cluster with host names, IP addresses etc
 """
 
-node_names = []
+head_node = 'tambora'
+node_names = [head_node]
 node_info = {}
+node_info[head_node] = '10.1.1.2'
 for i in range(1, 11):
     hostname = 'node%i' % i
     ip_address = '10.1.1.%i' % (10 + i)
