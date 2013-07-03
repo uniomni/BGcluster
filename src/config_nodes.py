@@ -55,11 +55,20 @@ for node in node_names:
 username = raw_input('Please enter sudo username (must be the same for all nodes): ')
 password = getpass.getpass('Please enter sudo password (must be the same for all nodes): ')
 
-command = 'mount -a -v'
-for node in node_names:
-    if node in failed: 
-        continue
 
-    run_remote(username, node, password, directory=None,
-               command=command,
-               verbose=True, debug=False)
+for command in ['mount -a -v',
+                'apt-get update',
+                'apt-get install -y openmpi-bin']:
+                
+
+    print '--------------------------'
+    print 'Command: %s' % command
+    print '--------------------------'
+
+    for node in node_names:
+        if node in failed: 
+            continue
+
+        run_remote(username, node, password, directory=None,
+                   command=command,
+                   verbose=True, debug=True) #False)

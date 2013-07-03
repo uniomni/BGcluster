@@ -62,19 +62,14 @@ def run_remote(username, host, password, directory=None,
     # Write password to process.
     # Use variable either from first time input or file
     p.stdin.write('%s\n' % password)
+
+    # FIXME (Ole): I think if we don't print these, commands will be issued without 
+    # waiting for completion. This is great for speed, but perhaps we might get 
+    # issues with apt-get on the same host being locked.
     if debug:
         print 'stdout: "%s"' % p.stdout.read()
         print 'stderr: "%s"' % p.stderr.read()
     
-    if verbose:
-        print
-
-
-def usage():
-    s = 'Usage:\t'
-    s += 'python exec_cluster.py <command>'
-
-    return s
 
 if __name__ == '__main__':
     
