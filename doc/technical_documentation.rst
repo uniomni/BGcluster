@@ -9,6 +9,7 @@ The cluster consists of one headnode and 10 compute nodes with a 3 common NAS un
 The source code and technical documentation for this project are available at https://bitbucket.org/ismailsunni/bgcluster
 
 To login to the cluster as administrator run::
+
     ssh install@tambora.vsi.esdm.go.id
 
 
@@ -226,21 +227,35 @@ Mounting of NAS
 			
 Mount NAS shared folder to headnode
 ------------------------------------
-	* Create folder on the headnode to mount NAS's shared folder:
+	* Create folder on the headnode to mount NAS's shared folder::
+
 		sudo -s
 		mkdir -p /mnt/nfs/modeling_area
-	* Edit /etc/fstab, add this following line (10.1.1.50 is IP of NAS): 
+
+	* Edit /etc/fstab, add this following line (10.1.1.50 is IP of NAS)::
+
 		10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area nfs defaults 1 1
-	* Then you can run something like the following to see your files on the NAS:
+
+	* Then you can run something like the following to see your files on the NAS::
+
 		mount 10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area
-	* Type df -h to see list of filesystem	
+
+	* Type df -h to see list of filesystem
+
 Configure entire cluster through scripts
 ----------------------------------------
 
-# Getting scripts and docs from bitbucket: (FIXME: Someone to write the instructions)
+# Getting scripts and docs from bitbucket:
+	
+	* Requires Git Client to bitbucket repos
+	* Follow the instruction to setup SSH for Git in https://confluence.atlassian.com/display/BITBUCKET/How+to+install+a+public+key+on+your+Bitbucket+account
+	* Get the files from the repos::
 
- * Run server configuration (e.g. writing /etc/hosts)::
+		git clone git@bitbucket.org:cipta_muhamad_firmansyah/bgcluster.git
 
-    sudo python config_server.py
+	* Run server configuration (e.g. writing /etc/hosts)::
+
+		sudo python config_server.py
+
  * 
 
