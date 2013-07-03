@@ -49,8 +49,21 @@ Next steps
 3 July 2013
 -----------
 
- * bla bla bla
+ * Built node3 and node4, mounted their /home to head node. We now have 4 running nodes.
+ * Scripted configuration of /etc/fstab on head node including the synology NAS
+ * Mounted synology NAS to running nodes
+ * Got remote installation script into a workable shape with error messages and timeout option.
+ * Installed basic deb packages using remote install script 
+ * Installed pypar using setup.py with remote install script. Verified tests pass on head and compute nodes 
+ * Installed Python-FALL3D in /home area 
 
 Setbacks
 ........
  * Had to move repository due to limitations on bitbucket
+
+Next steps
+..........
+ * Configure MPI and verify that pypar examples run and scale (Ole and Ismail)
+ * Run Python-FALL3D using real data and verify that results are as expected (Cipta)
+ * Run Python-FALL3D in parallel and verify that it scales (Cipta and Adele Crozier-Bear)
+ 
