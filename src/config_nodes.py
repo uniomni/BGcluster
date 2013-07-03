@@ -14,7 +14,7 @@ from packages import debian_packages
 
 # Here are some code snippets testing that nodes can be pinged and ssh'd into.
 
-failed = node_names[3:]
+failed = []  #node_names[3:]
 print
 for node in node_names:
     if node in failed: continue
