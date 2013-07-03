@@ -55,7 +55,7 @@ for node in node_names:
 username = raw_input('Please enter sudo username (must be the same for all nodes): ')
 password = getpass.getpass('Please enter sudo password (must be the same for all nodes): ')
 
-command = 'mount -a'
+command = 'mount -a -v'
 for node in node_names:
     if node in failed: 
         continue

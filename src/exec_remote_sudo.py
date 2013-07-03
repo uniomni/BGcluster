@@ -39,17 +39,19 @@ def run_remote(username, host, password, directory=None,
     if command is None:
         # Default command for diagnostic purposes
         #command = 'echo -n `whoami`; echo -n @; echo `hostname`'
-        command = 'echo `whoami`'
+        #command = 'echo `whoami`'
+        command = 'printf "`whoami`@`hostname`\n"'
 
     if directory is None:
         directory = '~'
 
-    command_sanitized = command.replace(' ', '_').replace('`','').replace(';', ':')
+    command_sanitized = command.replace(' ', '_').replace('`', '').replace('\n', '')
     logfile = '/var/tmp/last_remote_exec_%s_%s.log' % (username, command_sanitized)
 
     if verbose:
-        print 'Running command "%s" on %s in directory %s. See logfile %s for details.' % (command, host, 
-                                                                                           directory, logfile)
+        print ('Running command "%s" on %s in directory %s. '
+               'See logfile %s for details.' % (command, host, 
+                                                directory, logfile))
     p = subprocess.Popen(['ssh', '-t', '-t', '%s@%s' % (username, host),
                           'cd %s; sudo %s > %s' % (directory, command, logfile)],
                          stdin=subprocess.PIPE, 
