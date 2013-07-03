@@ -62,6 +62,7 @@ Next steps
 Setbacks
 ........
  * Had to move repository due to limitations on bitbucket
+ * Lost contact to all nodes about 7pm - appeared to be hanging. All came back 15 minutes later and we verified pypar parallel example ran perfectly on 4 nodes (16 processes). No idea what had happened.
 
 Next steps
 ..........
