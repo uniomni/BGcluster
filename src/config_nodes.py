@@ -75,4 +75,4 @@ for command in ['mount -a -v',
 
         run_remote(username, node, password, directory=None,
                    command=command,
-                   verbose=True, debug=True) #False)
+                   verbose=True, debug=False)
