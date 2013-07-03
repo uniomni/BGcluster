@@ -55,9 +55,11 @@ for node in node_names:
 username = raw_input('Please enter sudo username (must be the same for all nodes): ')
 password = getpass.getpass('Please enter sudo password (must be the same for all nodes): ')
 
+command = 'mount -a'
 for node in node_names:
     if node in failed: 
         continue
 
-    print 'Running mount -a on node %s' % node
-    run_remote(username, node, password, directory=None) #, command='mount -a -v')
+    run_remote(username, node, password, directory=None,
+               command=command,
+               verbose=True, debug=False)
