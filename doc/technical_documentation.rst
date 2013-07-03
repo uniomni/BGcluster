@@ -233,7 +233,7 @@ Mount NAS shared folder to headnode
 		10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area nfs defaults 1 1
 	* Then you can run something like the following to see your files on the NAS:
 		mount 10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area
-	* df -h to see list of filesystem	
+	* Type df -h to see list of filesystem	
 Configure entire cluster through scripts
 ----------------------------------------
 
