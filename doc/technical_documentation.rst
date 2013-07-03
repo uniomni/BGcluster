@@ -179,9 +179,27 @@ Testing the NFS mount
 
  * if nfs mounted successfully, abc.txt should be appear on head node /home with the correct user and group ids.
 
+Create new user (optional)
+--------------------------
+
+ * sudo adduser <username>
+ * sudo adduser <username> sudo  # If admin access is required
+
 Passwordless ssh
 ----------------
-TBA
+
+Create passwordless access for a particular user across cluster 
+
+ * ssh-keygen
+
+If /home is shared through NFS mount across nodes
+ * cd .ssh; cat id_rsa.pub >> authorized_hosts
+
+If /home is not shared (do this for all nodes)
+ * ssh-copy-id <node> ~/.ssh/id_rsa.pub
+
+To test
+ * ssh <host> whoami
 
 Mounting of NAS
 ---------------
@@ -210,7 +228,7 @@ Mounting of NAS
 Configure entire cluster through scripts
 ----------------------------------------
 
-# Getting scripts and docs from bitbucket:
+# Getting scripts and docs from bitbucket: (FIXME: Someone to write the instructions)
 
  * Run server configuration (e.g. writing /etc/hosts)::
 
