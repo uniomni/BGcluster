@@ -22,6 +22,18 @@ fid = open('/etc/hosts', 'w')
 fid.write(s)
 fid.close()
 
+# Create /etc/mpihosts
+
+s = ""
+for node in config.node_names:
+    s += '%s %s\n' % (node, 'slots=4')
+
+fid = open('/etc/mpihosts', 'w')
+fid.write(s)
+fid.close()
+
+print "/etc/mpihosts created...\n"
+
 # Mounting NAS on the Head Node
 
 try:
