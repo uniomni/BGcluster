@@ -23,12 +23,13 @@
  * Kept documentation up to date.
 
 
-Set backs
-.........
+Setbacks
+........
  * Lost internet access to tambora for more than 2 hours
  * Synology server was not installed and installation disks have gone missing
  * Techical problems with the AusAID system in Jakarta required Rangga to divert his attention away for the cluster (It turned out that all accounts at AIFDR had expired 2nd July).
- * Buffalo NAS servers do not have NFS server installed (perhaps only designed for Windows?)
+ * Issue at BNPB with real time earthquake impact server distracted the team in Bandung.
+ * The 2 Buffalo NAS servers do not have NFS server installed (perhaps only designed for Windows?)
 
 
 Next steps
@@ -38,10 +39,18 @@ Next steps
  * Build node2, node3, node4 (Cipta)
  * Update config_server to create mount points generate fstab with mounts on nodes (Rangga)
  * Continue with LDAP (Rangga - Perkerjaan Rumah)
- * Start scripting (config_nodes.py) installation of packages on nodes (Ismail and Ole)
+ * Start scripting (config_nodes.py) installation of packages and configuration on nodes (Ismail and Ole)
  * Trying to configure MPI and run a parallel program
  * Network timings (down the track)
  * Keep docs up to date
  * Start creating user documentation for users like Anjar (Cipta)
  * Start creating sysadm docs (e.g. how to install packages and create users).
 
+3 July 2013
+-----------
+
+ * bla bla bla
+
+Setbacks
+........
+ * Had to move repository due to limitations on bitbucket
