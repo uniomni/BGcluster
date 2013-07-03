@@ -53,9 +53,11 @@ Next steps
  * Scripted configuration of /etc/fstab on head node including the synology NAS
  * Mounted synology NAS to running nodes
  * Got remote installation script into a workable shape with error messages and timeout option.
- * Installed basic deb packages using remote install script 
- * Installed pypar using setup.py with remote install script. Verified tests pass on head and compute nodes 
- * Installed Python-FALL3D in /home area 
+ * Installed basic deb packages using remote install script
+ * Installed pypar using setup.py with remote install script. Verified tests pass on head and compute nodes
+ * Installed Python-FALL3D in /home area
+ * Scripted configuration of /etc/mpihosts on head node
+ * Configured MPI and verified that pypar examples run and scale across multiple nodes (Ole and Ismail)
 
 Setbacks
 ........
@@ -63,7 +65,9 @@ Setbacks
 
 Next steps
 ..........
- * Configure MPI and verify that pypar examples run and scale (Ole and Ismail)
+
  * Run Python-FALL3D using real data and verify that results are as expected (Cipta)
  * Run Python-FALL3D in parallel and verify that it scales (Cipta and Adele Crozier-Bear)
- 
+ * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday)
+ * Network timings (down the track)
+
