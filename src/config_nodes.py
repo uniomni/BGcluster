@@ -55,10 +55,11 @@ for node in node_names:
 username = raw_input('Please enter sudo username (must be the same for all nodes): ')
 password = getpass.getpass('Please enter sudo password (must be the same for all nodes): ')
 
+# Read all debian packages and create apt-get command for them to be used in loop below.
 
 for command in ['mount -a -v',
                 'apt-get update',
-                'apt-get install -y openmpi-bin']:
+                'apt-get install -y openmpi-bin']:  # Replace with all packages
                 
 
     print '--------------------------'
