@@ -158,6 +158,7 @@ for node in node_names:
         print 'NAS mounted: Node %s FAILED' % node
         failed.append(node)
 
+    if node == 'tambora': continue  # Exclude head node
     if s.find(':/home') >= 0:
         print '/home mounted: Node %s OK' % node
     else:
@@ -169,6 +170,8 @@ print
 # Check that home directory is found
 for node in node_names:
     if node in failed: continue
+
+    if node == 'tambora': continue  # Exclude head node
 
     logfile = '%s.home' % node
 
