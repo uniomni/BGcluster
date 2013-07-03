@@ -60,4 +60,4 @@ for node in node_names:
         continue
 
     print 'Running mount -a on node %s' % node
-    run_remote(username, node, password, directory=None, command='mount -a')
+    run_remote(username, node, password, directory=None, command='mount -a -v')
