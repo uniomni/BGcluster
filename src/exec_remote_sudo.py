@@ -45,7 +45,7 @@ def run_remote(username, host, password, directory=None,
         directory = '~'
 
     command_sanitized = command.replace(' ', '_').replace('`','').replace(';', ':')
-    logfile = '/var/tmp/last_remote_exec_%s.log' % command_sanitized
+    logfile = '/var/tmp/last_remote_exec_%s_%s.log' % (username, command_sanitized)
 
     if verbose:
         print 'Running command "%s" on %s in directory %s. See logfile %s for details.' % (command, host, 
