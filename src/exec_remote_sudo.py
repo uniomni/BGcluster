@@ -19,13 +19,17 @@ python exec_cluster.py python setup.py install
 
 import os
 import sys
+import time
 import getpass
 import subprocess
 
 
-def run_remote(username, host, password, directory=None, 
+def run_remote(username, host, password, 
+               directory=None, 
                command=None,
-               verbose=True, debug=True):
+               timeout=None,
+               verbose=True, 
+               debug=True):
     """Run command on remote host as sudo
 
     Args
@@ -33,13 +37,19 @@ def run_remote(username, host, password, directory=None,
     username: user id under which to run. Must have sudo access.
     host: hostname or ip address of remote host
     directory: directory in which to run the command. If None cd to ~
-    command: unix command to run. Defaults to 'whoami' (for testing). 
+    command: unix command to run. Defaults to 'whoami@hostname' (for testing).
+    timeout: Optional timeout in seconds. Default None which means command can run indefinitely.
+             If timeout is None run_remote will return immediately letting 
+             the command run in the background.
+             If timeout is specified, run_remote will wait until command has finished or 
+             timeout has been reached in which case an exception is raised.
+    verbose: If True print some diagnostics to console
+    debug:   If True print the result of stderr and stdout from the command to the console. 
+             As a side effect, run_remote will block until command has finished if debug is True.
     """
 
     if command is None:
         # Default command for diagnostic purposes
-        #command = 'echo -n `whoami`; echo -n @; echo `hostname`'
-        #command = 'echo `whoami`'
         command = 'printf "`whoami`@`hostname`\n"'
 
     if directory is None:
@@ -63,6 +73,51 @@ def run_remote(username, host, password, directory=None,
     # Use variable either from first time input or file
     p.stdin.write('%s\n' % password)
 
+    if timeout is not None:
+        try:
+            timeout = int(timeout)
+        except:
+            msg = ('Timeout %s could not be cast as an integer. '
+                   'Timeout should specify a number of seconds.' % timeout)
+            RuntimeError(msg)
+
+        if not timeout > 0:
+            msg = ('Timeout should be a positive number of seconds. ' 
+                   'I got %i' % timeout)
+            RuntimeError(msg)
+
+        t0 = time.time()
+
+        t = time.time() - t0
+        while p.poll() is None and t < timeout:
+             print 'waiting...', t
+             time.sleep(1)
+             t = time.time() - t0
+        print 'done'     
+             
+        if t >= timeout:
+            p.kill()  # Kill the remote process
+            msg = ('Command %s timed out after %i seconds and was killed.\n'
+                   'stdout: %s' 
+                   'stderr: %s' 
+                   % (command, timeout, 
+                      p.stdout.read(), p.stderr.read()))
+            raise Exception(msg)
+        
+        if p.returncode != 0:
+            msg = ('Command %s returned with return code %i.\n'
+                   'stdout: %s' 
+                   'stderr: %s' 
+                   % (command, p.returncode, 
+                      p.stdout.read(), p.stderr.read()))
+            raise Exception(msg)
+
+
+        print 'Command %s returned normally after %i seconds' % (command, t)
+        print 'stdout: %s' % p.stdout.read()
+        print 'stderr: %s' % p.stderr.read()
+        
+        
     # FIXME (Ole): I think if we don't print these, commands will be issued without 
     # waiting for completion. This is great for speed, but perhaps we might get 
     # issues with apt-get on the same host being locked.
@@ -89,7 +144,9 @@ if __name__ == '__main__':
     
     # Run command remotely for each host
     #for host in ['tambora', 'node1', 'node2']:
-    for host in ['node1', 'node2']:
-        
+    #for host in ['node1', 'node2']:
+    for host in ['node2']:
 
-        run_remote(username, host, password, directory=cwd, command=None)
+        run_remote(username, host, password, directory=cwd, command=command, debug=False, 
+                   timeout=5) 
+

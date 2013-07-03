@@ -9,6 +9,7 @@ The cluster consists of one headnode and 10 compute nodes with a 3 common NAS un
 The source code and technical documentation for this project are available at https://bitbucket.org/ismailsunni/bgcluster
 
 To login to the cluster as administrator run::
+
     ssh install@tambora.vsi.esdm.go.id
 
 
@@ -139,6 +140,45 @@ Install fundamental packages
  * apt-get install openssh-server
  * apt-get install nfs-common portmap
 
+Mounting of NAS
+---------------
+# 3 NAS ( 1 Synology, 2 Buffalo Linkstation)
+# Capacity Synology NAS is 10 Terabyte
+# Capacities of both Buffalo Linkstation NAS are 4 Terabyte for each NAS
+	
+	* Set up first NAS with Synology Assistant
+	* Configure network:: 
+
+		 IP address 10.1.1.50
+		 Netmask 255.255.255.0
+		 Gateway 10.1.1.1	
+
+	* Set up user details ::
+
+		username: admin
+		password: *********
+		NAS name : nas1
+
+	* Installing DSM 4.2 from Resources CD or Synology Download Center http://www.synology.com/support/download.php?lang=enu&b=5%20bays&m=DS1512%2B
+	* Create volume 1 with all hard drive using RAID 5, so the capacity will reduce from 10 Terabyte to 7.5 Terabyte
+	* Create shared folder (e.g /volume1/modeling)
+			
+Mount NAS shared folder to headnode (This part has been scripted inside config_server.py)
+-----------------------------------
+	* Create folder on the headnode to mount NAS's shared folder::
+
+		sudo -s
+		mkdir -p /mnt/nfs/modeling_area
+
+	* Edit /etc/fstab, add this following line (10.1.1.50 is IP of NAS)::
+
+		10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area nfs defaults 1 1
+
+	* Then you can run something like the following to see your files on the NAS::
+
+		mount 10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area
+
+	* Type df -h to see list of filesystem
 
 Setting up NFS mount of /home on nodes
 --------------------------------------
@@ -201,46 +241,20 @@ If /home is not shared (do this for all nodes)
 To test
  * ssh <host> whoami
 
-Mounting of NAS
----------------
-# 3 NAS ( 1 Synology, 2 Buffalo Linkstation)
-# Capacity Synology NAS is 10 Terabyte
-# Capacities of both Buffalo Linkstation NAS are 4 Terabyte for each NAS
-	
-	* Set up first NAS with Synology Assistant
-	* Configure network:: 
-
-		 IP address 10.1.1.50
-		 Netmask 255.255.255.0
-		 Gateway 10.1.1.1	
-
-	* Set up user details ::
-
-		username: admin
-		password: *********
-		NAS name : nas1
-
-	* Installing DSM 4.2 from Resources CD or Synology Download Center http://www.synology.com/support/download.php?lang=enu&b=5%20bays&m=DS1512%2B
-	* Create volume 1 with all hard drive using RAID 5, so the capacity will reduce from 10 Terabyte to 7.5 Terabyte
-	* Create shared folder (e.g /volume1/modeling)
-			
-Mount NAS shared folder to headnode
-------------------------------------
-	* Create folder on the headnode to mount NAS's shared folder:
-		sudo -s
-		mkdir -p /mnt/nfs/modeling_area
-	* Edit /etc/fstab, add this following line (10.1.1.50 is IP of NAS): 
-		10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area nfs defaults 1 1
-	* Then you can run something like the following to see your files on the NAS:
-		mount 10.1.1.50:/volume1/modeling /mnt/nfs/modeling_area
-	* Type df -h to see list of filesystem	
 Configure entire cluster through scripts
 ----------------------------------------
 
-# Getting scripts and docs from bitbucket: (FIXME: Someone to write the instructions)
+# Getting scripts and docs from bitbucket:
+	
+ * Requires Git Client to bitbucket repos
+ * Follow the instruction to setup SSH for Git in https://confluence.atlassian.com/display/BITBUCKET/How+to+install+a+public+key+on+your+Bitbucket+account
+ * Get the files from the repos::
+
+    git clone git@bitbucket.org:cipta_muhamad_firmansyah/bgcluster.git
 
  * Run server configuration (e.g. writing /etc/hosts)::
 
     sudo python config_server.py
+
  * 
 
