@@ -8,6 +8,7 @@ import os
 import getpass
 from config import node_names
 from exec_remote_sudo import run_remote
+from packages import debian_packages
 
 # First, we check how many nodes can be pinged and and ssh'd into
 
@@ -56,10 +57,12 @@ username = raw_input('Please enter sudo username (must be the same for all nodes
 password = getpass.getpass('Please enter sudo password (must be the same for all nodes): ')
 
 # Read all debian packages and create apt-get command for them to be used in loop below.
+apt_get_command = 'apt-get install -y '
+apt_get_command += ' '.join(debian_packages)
 
 for command in ['mount -a -v',
                 'apt-get update',
-                'apt-get install -y openmpi-bin']:  # Replace with all packages
+                apt_get_command]:
                 
 
     print '--------------------------'
