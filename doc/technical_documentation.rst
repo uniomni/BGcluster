@@ -246,15 +246,15 @@ Configure entire cluster through scripts
 
 # Getting scripts and docs from bitbucket:
 	
-	* Requires Git Client to bitbucket repos
-	* Follow the instruction to setup SSH for Git in https://confluence.atlassian.com/display/BITBUCKET/How+to+install+a+public+key+on+your+Bitbucket+account
-	* Get the files from the repos::
+ * Requires Git Client to bitbucket repos
+ * Follow the instruction to setup SSH for Git in https://confluence.atlassian.com/display/BITBUCKET/How+to+install+a+public+key+on+your+Bitbucket+account
+ * Get the files from the repos::
 
-		git clone git@bitbucket.org:cipta_muhamad_firmansyah/bgcluster.git
+    git clone git@bitbucket.org:cipta_muhamad_firmansyah/bgcluster.git
 
-	* Run server configuration (e.g. writing /etc/hosts)::
+ * Run server configuration (e.g. writing /etc/hosts)::
 
-		sudo python config_server.py
+    sudo python config_server.py
 
  * 
 
