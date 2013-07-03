@@ -45,7 +45,7 @@ s = fid.read()
 fid.close()
 os.remove(logfile)
 
-if s.find(':/nas') >= 0 and s.find(':/volume') >= 0:
+if s.find(':/volume1/modeling') >= 0:
     print 'NAS mounted: Head node OK'
 else:
     print 'NAS mounted: Head node FAILED'
@@ -152,10 +152,16 @@ for node in node_names:
     fid.close()
     os.remove(logfile)
 
-    if s.find(':/nas') >= 0:
+    if s.find(':/volume1/modeling') >= 0:
         print 'NAS mounted: Node %s OK' % node
     else:
         print 'NAS mounted: Node %s FAILED' % node
+        failed.append(node)
+
+    if s.find(':/home') >= 0:
+        print '/home mounted: Node %s OK' % node
+    else:
+        print '/home mounted: Node %s FAILED' % node
         failed.append(node)
 
 
