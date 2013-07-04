@@ -233,7 +233,7 @@ Create passwordless access for a particular user across cluster
  * ssh-keygen
 
 If /home is shared through NFS mount across nodes
- * cd .ssh; cat id_rsa.pub >> authorized_hosts
+ * cd .ssh; cat id_rsa.pub >> authorized_keys
 
 If /home is not shared (do this for all nodes)
  * ssh-copy-id <node> ~/.ssh/id_rsa.pub
