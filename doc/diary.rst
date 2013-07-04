@@ -69,6 +69,6 @@ Next steps
 
  * Run Python-FALL3D using real data and verify that results are as expected (Cipta)
  * Run Python-FALL3D in parallel and verify that it scales (Cipta and Adele Crozier-Bear)
- * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday)https://help.ubuntu.com/lts/serverguide/openldap-server.html
+ * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday): https://help.ubuntu.com/lts/serverguide/openldap-server.html
  * Network timings (down the track)
 
