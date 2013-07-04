@@ -72,3 +72,15 @@ Next steps
  * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday): https://help.ubuntu.com/lts/serverguide/openldap-server.html
  * Network timings (down the track)
 
+4 July 2013
+-----------
+
+ * Installing OpenLDAP Server:
+   * Modify /etc/hosts/::
+     
+     127.0.1.1       tambora.example.com     tambora
+   
+   * Install OpenLDAP::
+   
+     sudo apt-get install slapd ldap-utils
+   
