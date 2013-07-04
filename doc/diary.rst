@@ -86,6 +86,7 @@ Next steps
       sudo apt-get install slapd ldap-utils
    
    * Modifying/Populating your Database:
+   
      Create file ~/sandpit/ldap_config_files/add_content.ldif::
      
       dn: ou=Users,dc=example,dc=com
@@ -120,7 +121,21 @@ Next steps
      Add the content::
      
       ldapadd -x -D cn=admin,dc=example,dc=com -W -f add_content.ldif
-      
- *
 
+   * Logging:
    
+     Create file ~/sandpit/ldap_config_files/logging.ldif::
+   
+      dn: cn=config
+      changetype: modify
+      add: olcLogLevel
+      olcLogLevel: stats
+        
+     Implement the change::
+     
+      sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f logging.ldif
+    
+Next Steps:
+...........
+
+ * Continue OpenLDAP config: Access Control and TLS (rangga)
