@@ -76,10 +76,11 @@ Next steps
 -----------
 
  * Installing OpenLDAP Server:
+ 
    * Modify /etc/hosts/::
      
      127.0.1.1       tambora.example.com     tambora
-   
+     
    * Install OpenLDAP::
    
      sudo apt-get install slapd ldap-utils
