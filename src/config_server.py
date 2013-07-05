@@ -25,7 +25,7 @@ fid.close()
 # Create /etc/mpihosts
 
 s = ""
-for node in config.node_names:
+for node in config.node_names[::-1]:  # Reverse order to get head node last in list
     s += '%s %s\n' % (node, 'slots=4')
 
 fid = open('/etc/mpihosts', 'w')

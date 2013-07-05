@@ -90,7 +90,7 @@ Next Steps:
 ...........
 
  * Build remaining nodes and run install script (Cipta). Verify documentation is OK (Cipta). Verify parallel examples work across all nodes (40 processes) (Ismail).
- * Create node_activity script to monitor cluster and identify where there is spare capacity (Ole).
+ * Port node_activity script to monitor cluster from and identify where there is spare capacity (Ismail).
  * Run Python-FALL3D using forecasting data (Anjar)
  * Run Python-FALL3D in parallel and verify that it scales (Anjar, Ismail and Adele Crozier-Bear)
  * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday): https://help.ubuntu.com/lts/serverguide/openldap-server.html
