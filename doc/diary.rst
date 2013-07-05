@@ -84,7 +84,19 @@ Next Steps:
  * Installed OpenLDAP Server
  * Anjar verified that PythonFALL3D works sequentially using the merapi and Guntur validations examples.
  * Investigated problem with nodes hanging - looks like lingering puppet-agent might have been the issue (/var/log/syslog)
- * 
+ *
+
+Next Steps:
+...........
+
+ * Build remaining nodes and run install script (Cipta). Verify documentation is OK (Cipta). Verify parallel examples work across all nodes (40 processes) (Ismail).
+ * Create node_activity script to monitor cluster and identify where there is spare capacity (Ole).
+ * Run Python-FALL3D using forecasting data (Anjar)
+ * Run Python-FALL3D in parallel and verify that it scales (Anjar, Ismail and Adele Crozier-Bear)
+ * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday): https://help.ubuntu.com/lts/serverguide/openldap-server.html
+ * Network timings (down the track)
+
+ 
 
 5 July 2013
 -----------
