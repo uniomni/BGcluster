@@ -3,6 +3,7 @@
 
 head_node = 'tambora'
 node_names = [head_node]
+number_of_processors_per_node = 4  # Cores
 node_info = {}
 node_info[head_node] = '10.1.1.2'
 for i in range(1, 11):
