@@ -72,12 +72,21 @@ Next steps
  * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday): https://help.ubuntu.com/lts/serverguide/openldap-server.html
  * Network timings (down the track)
 
-4 July 2013
------------
-
-
     
 Next Steps:
 ...........
 
  * Continue OpenLDAP config: Access Control and TLS (rangga)
+
+4 July 2013
+-----------
+
+ * Installed OpenLDAP Server
+ * Anjar verified that PythonFALL3D works sequentially using the merapi and Guntur validations examples.
+ * Investigated problem with nodes hanging - looks like lingering puppet-agent might have been the issue (/var/log/syslog)
+ * 
+
+5 July 2013
+-----------
+ 
+
