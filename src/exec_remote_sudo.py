@@ -73,6 +73,8 @@ def run_remote(username, host, password,
     # Use variable either from first time input or file
     p.stdin.write('%s\n' % password)
 
+    password_mask = '*' * len(password)  # Used to replace the real password in stdout echo
+
     if timeout is not None:
         try:
             timeout = int(timeout)
@@ -101,7 +103,8 @@ def run_remote(username, host, password,
                    'stdout: %s' 
                    'stderr: %s' 
                    % (command, timeout, 
-                      p.stdout.read(), p.stderr.read()))
+                      p.stdout.read().replace(password, password_mask),  # Suppress password echo
+                      p.stderr.read()))
             raise Exception(msg)
         
         if p.returncode != 0:
@@ -114,7 +117,7 @@ def run_remote(username, host, password,
 
 
         print 'Command %s returned normally after %i seconds' % (command, t)
-        print 'stdout: %s' % p.stdout.read()
+        print 'stdout: %s' % p.stdout.read().replace(password, password_mask)  # Suppress password echo
         print 'stderr: %s' % p.stderr.read()
         
         
@@ -122,7 +125,7 @@ def run_remote(username, host, password,
     # waiting for completion. This is great for speed, but perhaps we might get 
     # issues with apt-get on the same host being locked.
     if debug:
-        print 'stdout: "%s"' % p.stdout.read()
+        print 'stdout: "%s"' % p.stdout.read().replace(password, password_mask)  # Suppress password echo
         print 'stderr: "%s"' % p.stderr.read()
     
 

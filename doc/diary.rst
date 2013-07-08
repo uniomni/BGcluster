@@ -58,6 +58,7 @@ Next steps
  * Installed Python-FALL3D in /home area
  * Scripted configuration of /etc/mpihosts on head node
  * Configured MPI and verified that pypar examples run and scale across multiple nodes (Ole and Ismail)
+ * Ran network timing code (C code from pypar) and verified 100 Mbit network.
 
 Setbacks
 ........
@@ -70,7 +71,6 @@ Next steps
  * Run Python-FALL3D using real data and verify that results are as expected (Cipta)
  * Run Python-FALL3D in parallel and verify that it scales (Cipta and Adele Crozier-Bear)
  * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday): https://help.ubuntu.com/lts/serverguide/openldap-server.html
- * Network timings (down the track)
 
     
 Next Steps:
@@ -94,11 +94,35 @@ Next Steps:
  * Run Python-FALL3D using forecasting data (Anjar)
  * Run Python-FALL3D in parallel and verify that it scales (Anjar, Ismail and Adele Crozier-Bear)
  * Continue with LDAP (Rangga - Perkerjaan Rumah for Monday): https://help.ubuntu.com/lts/serverguide/openldap-server.html
- * Network timings (down the track)
 
- 
 
 5 July 2013
 -----------
- 
 
+ * Ran probabilistic ashfall model on 8 cores and verified results.
+ * Fine tuned configure_nodes to not show password in cleartext
+ * First cut of node_activity working
+ * Built node5, .. ?
+
+Setbacks
+--------
+
+ * Nodes hung spontaneously again today - just after lunch.
+
+
+8 July 2013
+-----------
+
+
+Setbacks
+--------
+
+ * An electricity outage on the weekend had taken the nodes down. System was rebooted this morning and appeared to work for a little while. However, around 9:45 contact was lost spontaneously to all of them and their screens reported kernel panic. Screenshots and contents of dmesg and syslog was added to the repository. Upon rebooting, nodes could be contacted again but NAS mount was not working causing df -h and ls to hang. At 11:15 Cipta isolated a problem with the network switch and restarted it. Subsequently, cluster appeared to work normally again.
+
+Next steps
+----------
+
+ * Rangga to concentrate on LDAP
+ * Ismail and Amalfi to install EQRM
+ * Ryan to come to Bandung on Wednesday (10th) to install ANUGA
+ * Cipta and Ole to finish building the rest of the nodes
