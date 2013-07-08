@@ -1,6 +1,9 @@
 1 July 2013
 -----------
 
+Achievements
+............
+
  * Created planning board for project notes: https://realtimeboard.com/app/5110424/BG-Cluster
  * Created repository for source code and documentation: https://bitbucket.org/ismailsunni/bgcluster
  * Decided on names and ip address space for cluster: https://bitbucket.org/ismailsunni/bgcluster/src/27fb7fe5ad74f76cbdf7ea529e8d365e8c33d7e7/src/config.py?at=master
@@ -14,6 +17,9 @@
 
 2 July 2013
 -----------
+
+Achievements
+............
 
  * Created script to write /etc/hosts file: https://bitbucket.org/ismailsunni/bgcluster/src/c0353be09dc6c872c5f18c7b596b0439742fe012/src/config_server.py?at=master
  * Investigated puppet but looks like it only really works for .deb packages. In addition it kept causing nodes to hang.
@@ -33,7 +39,7 @@ Setbacks
 
 
 Next steps
-----------
+..........
 
  * Mount the NAS on head and compute nodes. Update technical docs (Rangga and Cipta).
  * Build node2, node3, node4 (Cipta)
@@ -48,6 +54,9 @@ Next steps
 
 3 July 2013
 -----------
+
+Achievements
+............
 
  * Built node3 and node4, mounted their /home to head node. We now have 4 running nodes.
  * Scripted configuration of /etc/fstab on head node including the synology NAS
@@ -81,6 +90,9 @@ Next Steps:
 4 July 2013
 -----------
 
+Achievements
+............
+
  * Installed OpenLDAP Server
  * Anjar verified that PythonFALL3D works sequentially using the merapi and Guntur validations examples.
  * Investigated problem with nodes hanging - looks like lingering puppet-agent might have been the issue (/var/log/syslog)
@@ -99,13 +111,16 @@ Next Steps:
 5 July 2013
 -----------
 
+Achievements
+............
+
  * Ran probabilistic ashfall model on 8 cores and verified results.
  * Fine tuned configure_nodes to not show password in cleartext
  * First cut of node_activity working
  * Built node5, .. ?
 
 Setbacks
---------
+........
 
  * Nodes hung spontaneously again today - just after lunch.
 
@@ -113,16 +128,23 @@ Setbacks
 8 July 2013
 -----------
 
-
-Setbacks
---------
-
- * An electricity outage on the weekend had taken the nodes down. System was rebooted this morning and appeared to work for a little while. However, around 9:45 contact was lost spontaneously to all of them and their screens reported kernel panic. Screenshots and contents of dmesg and syslog was added to the repository. Upon rebooting, nodes could be contacted again but NAS mount was not working causing df -h and ls to hang. At 11:15 Cipta isolated a problem with the network switch and restarted it. Subsequently, cluster appeared to work normally again.
-
-Next steps
-----------
+Plan
+....
 
  * Rangga to concentrate on LDAP
  * Ismail and Amalfi to install EQRM
  * Ryan to come to Bandung on Wednesday (10th) to install ANUGA
  * Cipta and Ole to finish building the rest of the nodes
+
+Achievements
+............
+
+ * Built all remaining nodes and verified that test_cluster.py passed for all 10.
+ * Verified that MPI example ran sucessfully across all 40 processing elements (10 nodes with 4 cores each).
+
+
+Setbacks
+........
+
+ * An electricity outage on the weekend had taken the nodes down. System was rebooted this morning and appeared to work for a little while. However, around 9:45 contact was lost spontaneously to all of them and their screens reported kernel panic. Screenshots and contents of dmesg and syslog was added to the repository. Upon rebooting, nodes could be contacted again but NAS mount was not working causing df -h and ls to hang. At 11:15 Cipta isolated a problem with the network switch and restarted it. Subsequently, cluster appeared to work normally again.
+
