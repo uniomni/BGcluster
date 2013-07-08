@@ -63,3 +63,17 @@ Install OpenLDAP Server
      Implement the change::
      
       sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f logging.ldif
+
+   * LDAP Authentication:
+
+     install libraries on the client that will know how and when to contact it. On Ubuntu, this has been traditionally accomplishd by installing the libnss-ldap package. This package will bring in other tools that will assist you in the configuration step. Install this package now::
+
+      sudo apt-get install libnss-ldap
+
+     You will be prompted for details of your LDAP server. If you make a mistake you can try again using::
+
+      sudo dpkg-reconfigure ldap-auth-config
+
+     The results of the dialog can be seen in /etc/ldap.conf. If your server requires options not covered in the menu edit this file accordingly.
+
+     
