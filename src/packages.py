@@ -15,5 +15,9 @@ debian_packages = [
     'python-scipy',
     'python-shapely',
     'python-setuptools',
-    'gcc']
+    'gcc',
+    # For ANUGA
+    'netcdf-bin',
+    'libnetcdf-dev',
+    'python-matplotlib']
 
