@@ -110,6 +110,16 @@ Setbacks
  * Nodes hung spontaneously again today - just after lunch.
 
 
+8 July 2013
+-----------
+
+
+Setbacks
+--------
+
+ * An electricity outage on the weekend had taken the nodes down. System was rebooted this morning and appeared to work for a little while. However, around 9:45 contact was lost spontaneously to all of them and their screens reported kernel panic. Screenshots and contents of dmesg and syslog was added to the repository. Upon rebooting, nodes could be contacted again but NAS mount was not working causing df -h and ls to hang.
+
+
 
 
  
