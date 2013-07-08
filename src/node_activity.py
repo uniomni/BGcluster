@@ -76,9 +76,9 @@ def nodesort(nodes):
     """Sort nodes based on their numerical values
     """
 
-    nodes.sort()  # Naive
+    #nodes.sort()  # Naive
     #nodes = sorted(nodes, key=lambda x: int(x[4:]))  # Simple
-    #nodes = sorted(nodes, key=lambda x: int(re.findall('([0-9]+)', x)[0]))  # General
+    nodes = sorted(nodes, key=lambda x: int(re.findall('([0-9]+)', x)[0]))  # General
 
     return nodes
 
@@ -123,7 +123,8 @@ L = []
 cpu_usage = {}
 #nodes = nodes.keys()
 nodes = node_names
-nodes =  nodesort(nodes)
+
+nodes =  nodesort(node_names)
 
 exceptions = 'grep -v root | grep -v syslog | grep -v gdm | grep -v syslog | grep -v daemon | grep -v statd'
 
@@ -316,23 +317,14 @@ else:
 celeb_days = [40, 50, 60, 100, 150, 200, 201, 202, 203, 250, 500, 1000]
 for d in celeb_days:
     if days_up == d:
-        #s = 'SEKARANG SELAMATAN %i HARI KELAHIRAN TAMBORA - SEMUA ORANG BERGEMBIRA!!!' % d
-        #s = 'SEKARANG SELAMATAN %i HARI SEJAK JONO MEMPERBAIKI TAMBORA - SEMUA ORANG BERGEMBIRA!!!' % d
-        s = 'SELAMAT %i HARI TAMBORA - SEMUA ORANG BERGEMBIRA!!!' % d
+        #s = 'SEKARANG SELAMATAN %i HARI KELAHIRAN ALAMBA - SEMUA ORANG BERGEMBIRA!!!' % d
+        #s = 'SEKARANG SELAMATAN %i HARI SEJAK JONO MEMPERBAIKI ALAMBA - SEMUA ORANG BERGEMBIRA!!!' % d
+        s = 'SELAMAT %i HARI ALAMBA - SEMUA ORANG BERGEMBIRA!!!' % d
 
         print
         print '-' * len(s)
         print s
         print '-' * len(s)
-
-if 200 < days_up < 204:
-    s = 'TAMBORA SUDAH HIDUB LEBIH DARI 200 HARI - SEMUA ORANG BERGEMBIRA!!!'
-
-    print
-    print '-' * len(s)
-    print s
-    print '-' * len(s)
-
 
 # Show disk usage of selected filesystems:
 p = pipe('df -h')
