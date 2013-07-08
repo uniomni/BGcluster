@@ -11,3 +11,4 @@ Links to project resources
  * LDAP guides: https://help.ubuntu.com/lts/serverguide/openldap-server.html
  * Install EQRM guides : http://eqrm.googlecode.com/svn-history/r1398/branches/soil_reduce_mem/README-install.txt
  * Download EQRM : http://nchc.dl.sourceforge.net/project/eqrm/eqrm_version2.2.svn1183.zip
+ * Add multiple PYTHONPATH in .bashrc : http://stackoverflow.com/a/5771390/1198772
