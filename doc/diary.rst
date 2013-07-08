@@ -147,4 +147,6 @@ Setbacks
 ........
 
  * An electricity outage on the weekend had taken the nodes down. System was rebooted this morning and appeared to work for a little while. However, around 9:45 contact was lost spontaneously to all of them and their screens reported kernel panic. Screenshots and contents of dmesg and syslog was added to the repository. Upon rebooting, nodes could be contacted again but NAS mount was not working causing df -h and ls to hang. At 11:15 Cipta isolated a problem with the network switch and restarted it. Subsequently, cluster appeared to work normally again.
+ * At 15:15 - without any thing being run - 5 nodes dropped spontaneously with node1 to node4 in kernel panic and node7 just hanging. Ut was quite hot in the server room. The kernel panic error was the same again about "BUG: unable to handle kernel paging request at <hex address>" on node1 to node4. The hanging node, node7, presented with a blank graphical screen. When dropping to terminal (Alt F1) it allowed username and password to be entered, the hung. Rebooting all nodes allowed all tests to pass again.
+
 
