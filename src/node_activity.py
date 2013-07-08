@@ -76,9 +76,9 @@ def nodesort(nodes):
     """Sort nodes based on their numerical values
     """
 
-    #nodes.sort()  # Naive
+    nodes.sort()  # Naive
     #nodes = sorted(nodes, key=lambda x: int(x[4:]))  # Simple
-    nodes = sorted(nodes, key=lambda x: int(re.findall('([0-9]+)', x)[0]))  # General
+    #nodes = sorted(nodes, key=lambda x: int(re.findall('([0-9]+)', x)[0]))  # General
 
     return nodes
 
@@ -316,9 +316,9 @@ else:
 celeb_days = [40, 50, 60, 100, 150, 200, 201, 202, 203, 250, 500, 1000]
 for d in celeb_days:
     if days_up == d:
-        #s = 'SEKARANG SELAMATAN %i HARI KELAHIRAN ALAMBA - SEMUA ORANG BERGEMBIRA!!!' % d
-        #s = 'SEKARANG SELAMATAN %i HARI SEJAK JONO MEMPERBAIKI ALAMBA - SEMUA ORANG BERGEMBIRA!!!' % d
-        s = 'SELAMAT %i HARI ALAMBA - SEMUA ORANG BERGEMBIRA!!!' % d
+        #s = 'SEKARANG SELAMATAN %i HARI KELAHIRAN TAMBORA - SEMUA ORANG BERGEMBIRA!!!' % d
+        #s = 'SEKARANG SELAMATAN %i HARI SEJAK JONO MEMPERBAIKI TAMBORA - SEMUA ORANG BERGEMBIRA!!!' % d
+        s = 'SELAMAT %i HARI TAMBORA - SEMUA ORANG BERGEMBIRA!!!' % d
 
         print
         print '-' * len(s)
@@ -326,7 +326,7 @@ for d in celeb_days:
         print '-' * len(s)
 
 if 200 < days_up < 204:
-    s = 'ALAMBA SUDAH HIDUB LEBIH DARI 200 HARI - SEMUA ORANG BERGEMBIRA!!!'
+    s = 'TAMBORA SUDAH HIDUB LEBIH DARI 200 HARI - SEMUA ORANG BERGEMBIRA!!!'
 
     print
     print '-' * len(s)
