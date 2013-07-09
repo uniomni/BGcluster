@@ -290,12 +290,15 @@ if ':' in fields[2]:
 else:
     # Later it'll be reported as a whole number of days
     days_up = int(fields[2])
+print 'fields', fields
 print 'Headnode has been up for %i %s.' % (days_up, fields[3][:-1]),
 
 try:
     fid = open(logfile)
 except:
-    print 'Could not open logfile %s' % logfile
+    pass
+    # FIXME (Ole): Uncomment when we have a logfile from regular tests
+    #print 'Could not open logfile %s' % logfile
 else:
     lines = fid.readlines()
     if len(lines) >= 2:
