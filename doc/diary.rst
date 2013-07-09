@@ -150,3 +150,19 @@ Setbacks
  * At 15:15 - without any thing being run - 5 nodes dropped spontaneously with node1 to node4 in kernel panic and node7 just hanging. Ut was quite hot in the server room. The kernel panic error was the same again about "BUG: unable to handle kernel paging request at <hex address>" on node1 to node4. The hanging node, node7, presented with a blank graphical screen. When dropping to terminal (Alt F1) it allowed username and password to be entered, the hung. Rebooting all nodes allowed all tests to pass again. Logfiles showed "Jul  8 15:14:31 node7 kernel: [12008.162766] nfs: server 10.1.1.2 not responding, still trying" and node showed that it had drifted to a time in the future 22:29:10.
  * Replaced network switch as problems re-emerged and persisted throughout afternoon. When all nodes were switched off it was still showing much traffic so something wasn't right. New network switch appeared be more swift but after 10 minutes we lost the abilty to ping tambora let alone log in. Network diagnostics indicated this might be a problem external to the cluster and Cipta decided to investigate. We'll all reconvene in the morning and focus on getting Tambora back on the net. 
 
+9 July 2013
+-----------
+
+Plan
+....
+ * Understand problem
+
+
+Achievements
+............
+
+ * Disconnected switch from router to isolate from external network (11am). Rangga noticed that the router was serving 3 IP addressed on one port that connected to the cluster switch. Maybe this was the problem.
+ * Modified network configuration on head node (tambora) to only use eth0 with local IP address
+ * Ran a large range of tests including big MPI runs (10k x 10k matrices with cyclic, blockwise and dynamic load balancing) for a few hours. No problems experienced as of 13:00.
+
+
