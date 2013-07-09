@@ -76,4 +76,31 @@ Install OpenLDAP Server
 
      The results of the dialog can be seen in /etc/ldap.conf. If your server requires options not covered in the menu edit this file accordingly.
 
-     
+     Now configure the LDAP profile for NSS::
+
+      sudo auth-client-config -t nss -p lac_ldap
+
+     Configure the system to use LDAP for authentication::
+
+      sudo pam-auth-update
+
+   * User and Group Management:
+
+     The ldap-utils package comes with enough utilities to manage the directory but the long string of options needed can make them a burden to use. The ldapscripts package contains wrapper scripts to these utilities that some people find easier to use.
+
+     Install the package::
+
+      sudo apt-get install ldapscripts
+
+     Then edit the file /etc/ldapscripts/ldapscripts.conf to arrive at something similar to the following::
+
+      SERVER=localhost
+      BINDDN='cn=admin,dc=example,dc=com'
+      BINDPWDFILE="/etc/ldapscripts/ldapscripts.passwd"
+      SUFFIX='dc=example,dc=com'
+      GSUFFIX='ou=Groups'
+      USUFFIX='ou=Users'
+      MSUFFIX='ou=Computers'
+      GIDSTART=10000
+      UIDSTART=10000
+      MIDSTART=10000
