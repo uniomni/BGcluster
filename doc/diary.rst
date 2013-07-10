@@ -156,7 +156,7 @@ Setbacks
 Plan
 ....
 
- * Understand problem with hanging nodes.
+ * Understand problem with hanging nodes - then get on with it!
 
 
 Achievements
@@ -169,6 +169,23 @@ Achievements
  * 14:00 - started switch, NAS, tambora, node1 and node2 until aircon and power has been sorted
  * Installed EQRM and ANUGA and verified test suites pass
  * Amalfi confirmed EQRM runs
+ * Rangga and Cipta reconfigured the network, verified tests worked much faster than before and documented the configuration. No cases of kernel panic.
+ * Rangga got LDAP to work.
 
 
+10 July 2013
+------------
 
+Status
+......
+
+ * Cluster switched off and removed from server room while aircon and electricity is being properly installed.
+ * Apparently 3 nodes (node3, node4, and node9) were damaged due to underpowering. They wore plugged to the same UPS which probably ran out off power somehow.
+ * All tests, network and parallel examples were working mell last night on the 7 remaining nodes.
+
+Plan
+....
+
+ * Update docs
+ * Get Ryan up to speed and get access to repository
+ * When (if) cluster is back online verify that everything still works and establish status
