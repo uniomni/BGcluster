@@ -130,6 +130,17 @@ Then copy the generated file ~/.ssh/known_hosts to /etc/ssh/ssh_known_hosts::
     sudo cp ~/.ssh/known_hosts /etc/ssh/ssh_known_hosts
 
 
+Configuring ssh
+---------------
+
+To prevent ssh from automatically terminate sessions add the following to the end of `/etc/ssh/sshd_config`::
+
+    # Prevent automatic logout
+    # From http://www.rogerobeid.com/2011/02/10/ssh-write-failed-broken-pipe/
+    ClientAliveInterval 15
+    ClientAliveCountMax 3
+
+
 Installing and configuring compute nodes
 ========================================
 
