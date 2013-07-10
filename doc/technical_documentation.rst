@@ -29,15 +29,22 @@ Create new user (optional)
 Passwordless ssh
 ----------------
 
-Create passwordless access for a particular user across cluster 
+This procedure will allow ssh to access nodes without prompting for passwords. This is essential to scripts or MPI programs making use of nodes. The steps need only to be done once for each user. Assuming all nodes share a common NFS mounted `/home` directory the steps are as follows:
 
- * ssh-keygen
+Generate encryption key pairs using the command::
 
-If /home is shared through NFS mount across nodes
- * cd .ssh; cat id_rsa.pub >> authorized_keys
+    ssh-keygen
 
-If /home is not shared (do this for all nodes)
- * ssh-copy-id <node> ~/.ssh/id_rsa.pub
+When asked for a passphrase just leave it blank and hit RETURN.
+Then publish the public key to all nodes using the commands::
 
-To test
- * ssh <host> whoami
+    cd .ssh; cat id_rsa.pub >> authorized_keys
+
+To test that it works do for all nodes::
+    ssh <node> whoami
+
+
+.. note 
+if `/home` is not shared publishing the public key has to be done remotely as follows (do this for all nodes)::
+
+    ssh-copy-id <node> ~/.ssh/id_rsa.pub
