@@ -111,6 +111,20 @@ Setting NFS on tambora (head node):
 
      exportfs -a
 
+Establishing all nodes as known_hosts
+.....................................
+
+This may have to wait until all nodes are up and running. Without a system wide notion of known hosts each user will have to login to each node and answer 'yes' to a question like this:: 
+
+    The authenticity of host 'alamba.aifdr.org (203.77.224.70)' can't be established.
+    ECDSA key fingerprint is 31:b8:76:b1:54:25:0f:84:27:ef:f2:61:17:0d:64:7b.
+    Are you sure you want to continue connecting (yes/no)? 
+
+One way to set this up system wide is for the administrator (user `install`) to ssh into all nodes and answer yes for each of them.
+
+Then copy the generated file ~/.ssh/known_hosts to /etc/ssh/ssh_known_hosts::
+
+    sudo cp ~/.ssh/known_hosts /etc/ssh/ssh_known_hosts
 
 
 Installing and configuring compute nodes
