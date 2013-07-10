@@ -180,7 +180,7 @@ Status
 ......
 
  * Cluster switched off and removed from server room while aircon and electricity is being properly installed.
- * Apparently 3 nodes (node3, node4, and node9) were damaged due to underpowering. They wore plugged to the same UPS which probably ran out off power somehow.
+ * Apparently 3 nodes (node3, node4, and node9) were down because their UPS was damaged maybe due to underpowering. They were plugged to the same UPS which probably ran out off power somehow.
  * All tests, network and parallel examples were working mell last night on the 7 remaining nodes.
 
 Plan
@@ -207,5 +207,10 @@ Reran cluster test (OK) and flogged the 6 nodes with MPI programs for about 30 m
 16:14 - Connected to head node again and could ping all compute nodes. However none were reachable through ssh. One of the nodes showed the familiar kernel panic screen with the error message about not being able to handle kernel paging request. 
 
 16:19 - Restarted MPI dynamic LB example on all 10 nodes (NAS off, network on) to see if problem can be reproduced (and not interrupted by power outages).
+
+16:56 - MPI job completed successfully. All nodes still up. 
+
+17:00 - Switched NAS back on and verified cluster tests passing.
+17:15 - Started MPI example again on all nodes.
 
 
