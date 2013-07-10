@@ -189,3 +189,22 @@ Plan
  * Update docs
  * Get Ryan up to speed and get access to repository
  * When (if) cluster is back online verify that everything still works and establish status
+
+Status 14:45
+............
+
+Cluster came back online with node1 and node2 up and running shortly after 2pm. We proceeded to run tests and found they ran correctly but sluggish as previously. Succesfully ran MPI examples and network timing with perfect results. After about 15 minutes both nodes crashed. Cipta observed a UPS beeping in the server room (connected to the headnode and NAS so doesn't explain node1 and node2 crashing).
+
+Restarted cluster with node1, node2, node3, node4, node5 and node6 running, but Synology NAS switched off.
+Reran cluster test (OK) and flogged the 6 nodes with MPI programs for about 30 minutes. No problems encountered.
+
+15:30 - Additionally started node7, node8, node9 and node10. Ran MPI examples on all nodes (network on, NAS off). No problems after 20 minutes except node10 lost power due to faulty power cable.
+
+15:50 - Restarted MPI dynamic LB example on all 10 nodes.
+
+16:00 - Headnode down due to UPS failing (power was supplied but UPS stopped causing head node to switch off).
+
+16:14 - Connected to head node again and could ping all compute nodes. However none were reachable through ssh. One of the nodes showed the familiar kernel panic screen with the error message about not being able to handle kernel paging request. 
+
+16:19 - Restarted MPI dynamic LB example on all 10 nodes (NAS off, network on) to see if problem can be reproduced (and not interrupted by power outages).
+
