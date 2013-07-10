@@ -25,6 +25,21 @@ Install of Ubuntu 12.04 (64 bit)
 
 configure network manually as below
 
+Network Configuration of Cluster
+-------------------------------
+.. figure:: /BGCluster_net.png
+* To connecting cluster to the internet, we should create NAT (Network Address Translation) rule in router Firewall configuration. In this case we use Mikrotik RouterOS. (http://www.mikrotik.com)
+
+* Create NAT rule for Nodes IP and Headnode IP to communicate internet using router’s IP address 203.189.89.241
+
+* Command in Mikrotik ::
+	For Local IP
+	/ip firewall  nat add chain=srcnat action=src-nat to-addresses=203.189.89.241 src-address=10.1.1.0/24
+	
+	For Public IP (such as tambora’s IP)
+	/ip firewall chain=srcnat action=src-nat to-addresses=203.189.89.241 src-address=203.189.89.240/29
+
+.. figure:: /BGCluster/nat_diagram.png
 
 Network configuration of headnode
 ---------------------------------
