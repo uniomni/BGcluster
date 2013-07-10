@@ -44,6 +44,8 @@ Network Configuration of Cluster
 
    .. figure:: nat_diagram.png
       :align: center
+
+
 Network configuration of headnode
 ---------------------------------
 
