@@ -27,7 +27,7 @@ configure network manually as below
 
 Network Configuration of Cluster
 -------------------------------
-.. figure:: /doc/BGCluster_net.png
+.. figure:: BGCluster_net.png
    :align: center
 
 * To connecting cluster to the internet, we should create NAT (Network Address Translation) rule in router Firewall configuration. In this case we use Mikrotik RouterOS. (http://www.mikrotik.com)
@@ -42,7 +42,7 @@ Network Configuration of Cluster
 	* For Public IP (such as tambora’s IP)::
 	/ip firewall chain=srcnat action=src-nat to-addresses=203.189.89.241 src-address=203.189.89.240/29
 
-.. figure:: /doc/nat_diagram.png
+.. figure:: nat_diagram.png
    :align: center
 Network configuration of headnode
 ---------------------------------
