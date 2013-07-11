@@ -6,7 +6,7 @@ user has sudo privileges.
 
 import os
 import getpass
-from config import node_names
+from config import node_names, head_node
 from exec_remote_sudo import run_remote
 from packages import debian_packages
 
@@ -16,7 +16,7 @@ from packages import debian_packages
 
 failed = []  #node_names[3:]
 print
-for node in node_names:
+for node in [head_node] + node_names:
     if node in failed: continue
     #print 'Trying to contact %s' % node
 

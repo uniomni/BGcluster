@@ -123,7 +123,8 @@ L = []
 cpu_usage = {}
 #nodes = nodes.keys()
 nodes = node_names
-nodes =  nodesort(nodes)
+
+nodes =  nodesort(node_names)
 
 exceptions = 'grep -v root | grep -v syslog | grep -v gdm | grep -v syslog | grep -v daemon | grep -v statd'
 
@@ -324,15 +325,6 @@ for d in celeb_days:
         print '-' * len(s)
         print s
         print '-' * len(s)
-
-if 200 < days_up < 204:
-    s = 'ALAMBA SUDAH HIDUB LEBIH DARI 200 HARI - SEMUA ORANG BERGEMBIRA!!!'
-
-    print
-    print '-' * len(s)
-    print s
-    print '-' * len(s)
-
 
 # Show disk usage of selected filesystems:
 p = pipe('df -h')
