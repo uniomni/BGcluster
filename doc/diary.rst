@@ -225,3 +225,15 @@ Status
 
  * Probabilistic volcanic ashfall model run successfully over dinner last night. Cluster has been up for 17 hours. All tests passed this morning and parallel examples run without issues.
 
+Plan
+....
+
+ * Rangga will roll out the LDAP for normal user authentication. Document and make Cipta knows. We'll keep the install user account as is.
+ * Afif and Ryan will run an ANUGA model on compute nodes. Provide screenshot.
+ * Ole to run probabilistic ash model and generate screenshot.
+ * Amalfi to run EQRM model and generate screenshot.
+ * Ole to run test_cluster + node acitivity and generate screenshots.
+ * Cipta to collect screenshots for status report.
+ * Ismail to install FreeNX and test that it works.
+
+
