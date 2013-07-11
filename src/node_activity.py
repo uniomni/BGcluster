@@ -295,7 +295,6 @@ if ':' in fields[2]:
 else:
     # Later it'll be reported as a whole number of days
     days_up = int(fields[2])
-print 'fields', fields
 print 'Headnode has been up for %i %s.' % (days_up, fields[3][:-1]),
 
 try:
