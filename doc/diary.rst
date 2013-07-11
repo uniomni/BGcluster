@@ -237,3 +237,17 @@ Plan
  * Ismail to install FreeNX and test that it works.
 
 
+Achievements
+............
+
+ * LDAP working in principle (on head node and node1 with new user). Need to modify config_nodes.py to install and configure ldap clients on nodes. Need to add ldap server configuration to head node installation.
+ * Screenshots of test_cluster and node_activity generated in bgcluster/doc/results
+ * Screenshots of probabilistics ash load added to results section
+ * Scalability study of ashload model added to results
+ * Installed FreeNX and verified it works
+ * Updated config_nodes so that commands can be arbitrarily long
+ * Dependencies for ANUGA and EQRM added to config_nodes script
+ * Amalfi ran EQRM model sucessfully. ASCII files need to be visualised - e.g. using QGIS
+ * ANUGA data copied from alamba. Model still needs to be run.
+
+
