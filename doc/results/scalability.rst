@@ -4,14 +4,14 @@ This is an example of the scalability using a small probabilistic ash model with
 #Cores      Time (s)   Speedup  Parallel Efficiency
 ======      ========   =======  ===================
 1
-2
+2           4742
 5           1924
 10          1060
 20          539
 40          356
 
 
-The observed scalability is consistent with what is expected of a cluster.
+The observed scalability is good and consistent with what is expected from Python-FALL3D.
 
 
 
@@ -27,6 +27,12 @@ These are observations from runs using the unix command `time` as in::
 
 2 cores
 -------
+
+real	79m1.637s
+user	0m0.060s
+sys	0m0.104s
+(4741.634)
+
 
 5 cores
 -------
