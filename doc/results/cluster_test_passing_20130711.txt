@@ -1,0 +1,94 @@
+
+NAS mounted: Head node OK
+UID/GID mapping (home): Node node OK
+UID/GID mapping (nas): Head node OK
+
+PING: Node node1 OK
+PING: Node node2 OK
+PING: Node node3 OK
+PING: Node node4 OK
+PING: Node node5 OK
+PING: Node node6 OK
+PING: Node node7 OK
+PING: Node node8 OK
+PING: Node node9 OK
+PING: Node node10 OK
+
+SSH: Node node1 OK
+SSH: Node node2 OK
+SSH: Node node3 OK
+SSH: Node node4 OK
+SSH: Node node5 OK
+SSH: Node node6 OK
+SSH: Node node7 OK
+SSH: Node node8 OK
+SSH: Node node9 OK
+SSH: Node node10 OK
+
+NAS mounted: Node node1 OK
+/home mounted: Node node1 OK
+NAS mounted: Node node2 OK
+/home mounted: Node node2 OK
+NAS mounted: Node node3 OK
+/home mounted: Node node3 OK
+NAS mounted: Node node4 OK
+/home mounted: Node node4 OK
+NAS mounted: Node node5 OK
+/home mounted: Node node5 OK
+NAS mounted: Node node6 OK
+/home mounted: Node node6 OK
+NAS mounted: Node node7 OK
+/home mounted: Node node7 OK
+NAS mounted: Node node8 OK
+/home mounted: Node node8 OK
+NAS mounted: Node node9 OK
+/home mounted: Node node9 OK
+NAS mounted: Node node10 OK
+/home mounted: Node node10 OK
+
+Home directory mounted: Node node1 OK
+Home directory mounted: Node node2 OK
+Home directory mounted: Node node3 OK
+Home directory mounted: Node node4 OK
+Home directory mounted: Node node5 OK
+Home directory mounted: Node node6 OK
+Home directory mounted: Node node7 OK
+Home directory mounted: Node node8 OK
+Home directory mounted: Node node9 OK
+Home directory mounted: Node node10 OK
+
+UID/GID mapping (home): Node node1 OK
+UID/GID mapping (home): Node node2 OK
+UID/GID mapping (home): Node node3 OK
+UID/GID mapping (home): Node node4 OK
+UID/GID mapping (home): Node node5 OK
+UID/GID mapping (home): Node node6 OK
+UID/GID mapping (home): Node node7 OK
+UID/GID mapping (home): Node node8 OK
+UID/GID mapping (home): Node node9 OK
+UID/GID mapping (home): Node node10 OK
+
+UID/GID mapping (nas): Node node1 OK
+UID/GID mapping (nas): Node node2 OK
+UID/GID mapping (nas): Node node3 OK
+UID/GID mapping (nas): Node node4 OK
+UID/GID mapping (nas): Node node5 OK
+UID/GID mapping (nas): Node node6 OK
+UID/GID mapping (nas): Node node7 OK
+UID/GID mapping (nas): Node node8 OK
+UID/GID mapping (nas): Node node9 OK
+UID/GID mapping (nas): Node node10 OK
+
+Head node reference date: Thu Jul 11 09:58:54 WIT 2013
+Date Thu Jul 11 09:58:55 WIT 2013: Node node1 OK
+Date Thu Jul 11 09:58:56 WIT 2013: Node node2 OK
+Date Thu Jul 11 09:58:56 WIT 2013: Node node3 OK
+Date Thu Jul 11 09:58:56 WIT 2013: Node node4 OK
+Date Thu Jul 11 09:58:56 WIT 2013: Node node5 OK
+Date Thu Jul 11 09:58:57 WIT 2013: Node node6 OK
+Date Thu Jul 11 09:58:57 WIT 2013: Node node7 OK
+Date Thu Jul 11 09:58:57 WIT 2013: Node node8 OK
+Date Thu Jul 11 09:58:57 WIT 2013: Node node9 OK
+Date Thu Jul 11 09:58:58 WIT 2013: Node node10 OK
+
+Cluster passed all tests OK
