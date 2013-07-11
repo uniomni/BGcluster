@@ -198,11 +198,15 @@ for node in nodes + [headnode]:
 
 # Swarzian transform
 L = sorted(L, key=itemgetter(0))
+#print 'L', len(L)
 if headstats is not None:
     L += [headstats]
 loads = [x[0] for x in L]
 nodes = [x[1] for x in L]
 users = [x[2] for x in L]
+#print 'loads', loads
+#print 'nodes', nodes
+#print 'users', len(users)
 
 users_overloading_nodes = {}
 free_nodes = []
@@ -227,6 +231,7 @@ for i, load in enumerate(loads):
             free_nodes.append(nodes[i])
 
     userlist = generate_userlist(users[i], load, nodes[i], users_overloading_nodes)
+    #print 'userlist', userlist
     print '%s %3i (%s)  %s' % (nodes[i].ljust(8), load, msg, userlist)
 
 
@@ -295,7 +300,9 @@ print 'Headnode has been up for %i %s.' % (days_up, fields[3][:-1]),
 try:
     fid = open(logfile)
 except:
-    print 'Could not open logfile %s' % logfile
+    pass
+    # FIXME (Ole): Uncomment when we have a logfile from regular tests
+    #print 'Could not open logfile %s' % logfile
 else:
     lines = fid.readlines()
     if len(lines) >= 2:
@@ -334,13 +341,15 @@ idx1 = header.find('Size')
 idx2 = header.find('Mounted')
 print
 print 'Directory       ' + header[idx1:idx2]
-filesystems = ['/model_area', '/data_area', '/snapshot_area', '/TsuDAT', '/OPENSTACK']
+filesystems = ['modeling']
 for filesystem in filesystems:
     for line in lines:
-        if filesystem in line and ':' not in line:
+        if filesystem in line: # and ':' not in line:
             text = line.strip()
             fields = text.split()
             idx = text.find('%')
+#            print fields, 'fields'
+#            print text, 'text'
             print fields[-1].ljust(15),
             print text[:idx+1]
 

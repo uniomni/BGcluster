@@ -10,5 +10,14 @@ debian_packages = [
     'gfortran', 
     'python-gdal', 
     'gdal-bin', 
-    'libnetcdf-dev']
+    'libnetcdf-dev',
+    # For EQRM
+    'python-scipy',
+    'python-shapely',
+    'python-setuptools',
+    'gcc',
+    # For ANUGA
+    'netcdf-bin',
+    'libnetcdf-dev',
+    'python-matplotlib']
 
