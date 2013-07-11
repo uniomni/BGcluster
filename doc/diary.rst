@@ -217,4 +217,11 @@ Reran cluster test (OK) and flogged the 6 nodes with MPI programs for about 30 m
 18:15 - job completed. Looking good. Off to Buka Puasa.
 
 
+11 July 2013
+------------
+
+Status
+......
+
+ * Probabilistic volcanic ashfall model run successfully over dinner last night. Cluster has been up for 17 hours. All tests passed this morning and parallel examples run without issues.
 
