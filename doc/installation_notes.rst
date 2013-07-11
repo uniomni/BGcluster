@@ -104,3 +104,70 @@ Install OpenLDAP Server
       GIDSTART=10000
       UIDSTART=10000
       MIDSTART=10000
+
+     create the ldapscripts.passwd file to allow rootDN access to the directory::
+
+      sudo sh -c "echo -n 'secret' > /etc/ldapscripts/ldapscripts.passwd"
+      sudo chmod 400 /etc/ldapscripts/ldapscripts.passwd
+
+     Replace “secret” with the actual password for your database's rootDN user
+
+     The scripts are now ready to help manage your directory. Here are some examples of how to use them:
+
+     1.Create a new user::
+
+      sudo ldapadduser george example
+
+     2.Change a user's password::
+
+      sudo ldapsetpasswd george
+      Changing password for user uid=george,ou=People,dc=example,dc=com
+      New Password: 
+      New Password (verify):
+
+     3.Delete a user::
+
+      sudo ldapdeleteuser george
+
+     4.Add a group::
+
+      sudo ldapaddgroup qa
+
+     5.Delete a group::
+ 
+      sudo ldapdeletegroup qa
+
+     6.Add a user to a group::
+
+      sudo ldapaddusertogroup george qa
+
+     7.Remove a user from a group::
+
+      sudo ldapdeleteuserfromgroup george qa
+
+     8.The ldapmodifyuser script allows you to add, remove, or replace a user's attributes. The script uses the same syntax as the ldapmodify utility. For example::
+
+      sudo ldapmodifyuser george
+      # About to modify the following entry :
+      dn: uid=george,ou=People,dc=example,dc=com
+      objectClass: account
+      objectClass: posixAccount
+      cn: george
+      uid: george
+      uidNumber: 1001
+      gidNumber: 1001
+      homeDirectory: /home/george
+      loginShell: /bin/bash
+      gecos: george
+      description: User account
+      userPassword:: e1NTSEF9eXFsTFcyWlhwWkF1eGUybVdFWHZKRzJVMjFTSG9vcHk=
+      
+      # Enter your modifications here, end with CTRL-D.
+      dn: uid=george,ou=People,dc=example,dc=com
+      replace: gecos
+      gecos: George Carlin
+
+     The user's gecos should now be “George Carlin”.
+
+   * Backup and Restore
+
