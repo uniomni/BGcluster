@@ -114,38 +114,38 @@ Install OpenLDAP Server
 
      The scripts are now ready to help manage your directory. Here are some examples of how to use them:
 
-     1. Create a new user::
+     1.Create a new user::
 
       sudo ldapadduser george example
 
-     2. Change a user's password::
+     2.Change a user's password::
 
       sudo ldapsetpasswd george
       Changing password for user uid=george,ou=People,dc=example,dc=com
       New Password: 
       New Password (verify):
 
-     3. Delete a user::
+     3.Delete a user::
 
       sudo ldapdeleteuser george
 
-     4. Add a group::
+     4.Add a group::
 
       sudo ldapaddgroup qa
 
-     5. Delete a group::
+     5.Delete a group::
  
       sudo ldapdeletegroup qa
 
-     6. Add a user to a group::
+     6.Add a user to a group::
 
       sudo ldapaddusertogroup george qa
 
-     7. Remove a user from a group::
+     7.Remove a user from a group::
 
       sudo ldapdeleteuserfromgroup george qa
 
-     8. The ldapmodifyuser script allows you to add, remove, or replace a user's attributes. The script uses the same syntax as the ldapmodify utility. For example::
+     8.The ldapmodifyuser script allows you to add, remove, or replace a user's attributes. The script uses the same syntax as the ldapmodify utility. For example::
 
       sudo ldapmodifyuser george
       # About to modify the following entry :
