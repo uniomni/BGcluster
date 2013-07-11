@@ -212,5 +212,9 @@ Reran cluster test (OK) and flogged the 6 nodes with MPI programs for about 30 m
 
 17:00 - Switched NAS back on and verified cluster tests passing.
 17:15 - Started MPI example again on all nodes.
+17:48 - Dynamic loadbalancing example (N = 2000) completed in 2070 seconds on 40 cores.
+17:55 - Started cyclic partitioning algorithm example (N = 10000) on all nodes.
+18:15 - job completed. Looking good. Off to Buka Puasa.
+
 
 
