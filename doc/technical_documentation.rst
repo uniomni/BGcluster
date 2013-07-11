@@ -48,3 +48,49 @@ To test that it works do for all nodes::
 if `/home` is not shared publishing the public key has to be done remotely as follows (do this for all nodes)::
 
     ssh-copy-id <node> ~/.ssh/id_rsa.pub
+
+
+How to see what is running on Tambora
+-------------------------------------
+
+To what is running on Tambora and its 10 nodes run::
+
+    python node_activity.py
+
+which is available in `bgcluster/src`
+
+It will take a few minutes to produce the result as it'll run `top` on every node and aggrate the statisitics.
+
+It is often convenient to have this script running and updating automatically. To do this run::
+
+    watch -n 5 python node_activity.py
+
+
+How to run jobs on Tambora
+--------------------------
+
+Firstly, determine which nodes are free running the node_activity.py script described above. Then either run the job sequentially by logging into a node or in parallel using MPI. 
+
+Running sequentially
+....................
+
+Login to the desired node (e.g. node5)::
+
+    ssh node5
+
+Then run the job normally, e.g::
+
+    python <script_name>
+
+
+Running in parallel
+...................
+
+To run a job in parallel use `mpirun` e.g. ::
+
+    time mpirun -np 40 -x FALL3DHOME -x PYTHONPATH -hostfile /etc/mpihosts python guntur_multiple_wind.py
+
+
+For more info about options to mpirun see http://www.open-mpi.org/doc/v1.4/man1/mpirun.1.php
+
+
