@@ -296,6 +296,7 @@ else:
     # Later it'll be reported as a whole number of days
     days_up = int(fields[2])
 print 'Headnode has been up for %i %s.' % (days_up, fields[3][:-1]),
+print 
 
 try:
     fid = open(logfile)
