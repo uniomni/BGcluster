@@ -22,7 +22,7 @@ import sys
 import time
 import getpass
 import subprocess
-
+from datetime import datetime
 
 def run_remote(username, host, password, 
                directory=None, 
@@ -56,7 +56,11 @@ def run_remote(username, host, password,
         directory = '~'
 
     command_sanitized = command.replace(' ', '_').replace('`', '').replace('\n', '')
-    logfile = '/var/tmp/last_remote_exec_%s_%s.log' % (username, command_sanitized)
+    # since there is a length limit for file name, we truncated the file name
+    if len(command_sanitized) > 100:
+        command_sanitized = command_sanitized[:100]
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    logfile = '/var/tmp/last_remote_exec_%s_%s_%s.log' % (username, command_sanitized, timestamp)
 
     if verbose:
         print ('Running command "%s" on %s in directory %s. '
