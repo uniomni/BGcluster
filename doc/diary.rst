@@ -251,3 +251,10 @@ Achievements
  * ANUGA data copied from alamba. Model still needs to be run.
 
 
+12 July 2013
+------------
+write by Ryan:
+ * Yesterday, Ismail installed pyproj module on Tambora for Anuga, and Anuga ran well without data (common error message if no data available).
+ * 9:45 I can't ran "node_activity" on Tambora.
+ * 9:50 Data for Anuga testing has been copied from alamba.
+ * 9:55 I connect to node8 and run Anuga, but node8 can't find pyproj module. I think need to install pyproj module on all nodes.
