@@ -17,6 +17,7 @@ debian_packages = [
     'python-setuptools',
     'gcc',
     # For ANUGA
+    'python-pyproj',
     'netcdf-bin',
     'libnetcdf-dev',
     'python-matplotlib']
