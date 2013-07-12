@@ -258,3 +258,4 @@ write by Ryan:
  * 9:45 I can't ran "node_activity" on Tambora.
  * 9:50 Data for Anuga testing has been copied from alamba.
  * 9:55 I connect to node8 and run Anuga, but node8 can't find pyproj module. I think need to install pyproj module on all nodes.
+ * 10:00 Ismail installed pyproj module on all nodes, Anuga testing is running now at node8
